@@ -3,91 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Adrián Fambuena</title>
+  <title>Adrián Fambuena | Portfolio</title>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(2,6,23,0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
     header {
-      background: #111827;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
+      background: radial-gradient(circle at top, #0f172a, #020617);
     }
 
     header h1 {
-      margin: 0;
-      font-size: 38px;
+      font-size: 48px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
     }
 
     header p {
+      margin-top: 15px;
       color: #94a3b8;
-      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards 0.3s;
     }
 
+    header a {
+      margin-top: 25px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.6s;
+    }
+
+    header a:hover {
+      background: #0ea5e9;
+    }
+
+    /* SECTIONS */
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 100px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
       border-left: 4px solid #38bdf8;
       padding-left: 10px;
-      margin-bottom: 20px;
     }
 
+    /* CARDS */
     .card {
-      background: #1e293b;
+      background: #0f172a;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 20px;
-      transition: transform 0.2s ease;
+      transition: 0.3s;
+      border: 1px solid #1e293b;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.02);
+      border-color: #38bdf8;
     }
 
-    a {
+    .card a {
       color: #38bdf8;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 40px;
       color: #64748b;
     }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+<nav>
+  <strong>Adrián</strong>
+  <div>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#proyecto">Proyecto</a>
+    <a href="#repos">Repositorios</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
 <header>
-  <h1>Adrián Fambuena Palomo</h1>
-  <p>👨‍💻 Estudiante de 1º de DAM (Desarrollo de Aplicaciones Multiplataforma)</p>
+  <h1>Adrián Fambuena</h1>
+  <p>Estudiante de DAM · Desarrollador en formación</p>
+  <a href="#proyecto">Ver proyectos</a>
 </header>
 
-<section>
-  <h2>👋 Sobre mí</h2>
+<section id="sobre">
+  <h2>Sobre mí</h2>
   <p>
-    Me apasiona la tecnología y el desarrollo de software. Actualmente estoy construyendo
-    mis bases como programador, enfocándome en crear código limpio y soluciones eficientes.
+    Me apasiona la tecnología y el desarrollo de software. Actualmente estoy construyendo mis bases como programador,
+    enfocándome en crear código limpio, eficiente y escalable.
   </p>
 </section>
 
-<section>
-  <h2>🚀 Proyecto Principal</h2>
+<section id="proyecto">
+  <h2>Proyecto Principal</h2>
   <div class="card">
     <h3>
       <a href="https://github.com/AdrianFambuena/APP-Informatica-Project" target="_blank">
@@ -95,14 +181,14 @@
       </a>
     </h3>
     <p>
-      Este es mi <strong>proyecto intermodular</strong>. Es una aplicación de gestión completa
-      que simula la operativa de una tienda de informática real, incluyendo gestión de stock y ventas.
+      Proyecto intermodular que simula la gestión completa de una tienda informática:
+      stock, ventas y operativa real.
     </p>
   </div>
 </section>
 
-<section>
-  <h2>📁 Repositorios Académicos</h2>
+<section id="repos">
+  <h2>Repositorios Académicos</h2>
 
   <div class="card">
     <h3>
@@ -110,7 +196,7 @@
         Programación Java
       </a>
     </h3>
-    <p>Ejercicios de lógica, programación orientada a objetos y estructuras de datos.</p>
+    <p>Ejercicios de lógica, POO y estructuras de datos.</p>
   </div>
 
   <div class="card">
@@ -119,19 +205,35 @@
         Lenguaje de Marcas
       </a>
     </h3>
-    <p>Exámenes y prácticas de HTML, CSS y JavaScript.</p>
+    <p>HTML, CSS y JavaScript.</p>
   </div>
 
 </section>
 
-<section>
-  <h2>📫 Contacto</h2>
+<section id="contacto">
+  <h2>Contacto</h2>
   <p>Email: <a href="mailto:adrianfampa@gmail.com">adrianfampa@gmail.com</a></p>
 </section>
 
 <footer>
   <p>© 2026 Adrián Fambuena</p>
 </footer>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
