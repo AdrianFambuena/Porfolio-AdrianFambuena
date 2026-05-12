@@ -9,7 +9,7 @@ Me apasiona la tecnología y el desarrollo de software. Actualmente estoy constr
 Este es mi **proyecto intermodular**. Es una aplicación de gestión completa que simula la operativa de una tienda de informática real, incluyendo gestión de stock y ventas.
 
 ## 📁 Mis Repositorios Académicos
-* **[Programación Java](https://github.com/AdrianFambuena/DAM-Programacion):** Ejercicios de lógica, POO y estructuras de datos.
+* **[Programación Java](https://adrianfambuena.github.io/DAM-Programacion/):** Ejercicios de lógica, POO y estructuras de datos.
 * **[Lenguaje de Marcas](https://github.com/AdrianFambuena/DAM-Lenguaje-Marcas):** Mis exámenes y prácticas de HTML, CSS y JS.
 
 ---
